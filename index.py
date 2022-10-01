@@ -1,3 +1,4 @@
+import email
 from logging import root
 from tkinter import *
 from tkinter import messagebox,filedialog
@@ -26,6 +27,11 @@ class  Mail:
         btn_conect=Button(m_frame,text="Your mail",font=("times new roman",20,"bold"),command=self.fen_conect,bg="blue",cursor="hand2",fg="red")
         btn_conect.place(x=700,y=5,width=220,height=50)
 
+        self.var_choice=StringVar()
+        simple=Radiobutton(self.root,text="One send",value="one",activebackground="white",variable=self.var_choice,font=("times new roman",25,"bold"),bg="white").place(x=50,y=250)        
+        multi=Radiobutton(self.root,text="Multiple send",value="many",activebackground="white",variable=self.var_choice,font=("times new roman",25,"bold"),bg="white").place(x=250,y=250)        
+
+
         
         
         #function
@@ -38,8 +44,18 @@ class  Mail:
         
         
         #title
-        title1=Label(self.root2,text="Connect to your gmail account",font=("Agerian",30),bg="cyan",fg="black")
+        title1=Label(self.root2,text="Connect to your gmail account",font=("Agerian",30),bg="teal",fg="black")
         title1.pack(side=TOP,fill=X)
+        
+        
+        email=Label(self.root2,text="Email",font=("times new roman",20),bg="white").place(x=320,y=60)
+        password=Label(self.root2,text="Password",font=("times new roman",20),bg="white").place(x=320,y=160)
+
+        
+        self.email=Entry(self.root2,font=("times new roman",18),bg="gray").place(x=200,y=120,width=350)
+        self.password=Entry(self.root2,font=("times new roman",18),bg="gray").place(x=200,y=220,width=350)
+        btn_un=Button(self.root2,text='Connect',font=("times new roman",18),bg="green",cursor="hand2").place(x=200,y=300,width=170)
+        btn_conecti=Button(self.root2,text="Cancel",font=("times new roman",18),bg="red",cursor="hand2").place(x=490,y=300,width=170)
     
         
         
